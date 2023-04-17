@@ -12,15 +12,14 @@
 
     <h1>Prova Bootstrap Users</h1>
     <div class="boxFilter">
-        <h3>Filtre pelo id: </h3>
-   
-       <select name="" id="" onchange="handleFilter()">
-        <option value="null">Escolha um id</option>
+        <button onclick="getAllUsers()">Todos</button>
+        <select name="id" id="id" onchange="handleFilter()">
+        <option value="null">Filtre pelo id</option>
         <option value="id">Id</option>
        </select>
-       <button onclick="getAllUsers()">Todos</button>
+       <select name="street" id="street" onchange="filterStreet()">
+       </select>
     </div>
-    
     
     <table class="table">
         <thead>
