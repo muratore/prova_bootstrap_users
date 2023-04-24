@@ -8,6 +8,7 @@ const getAllUsers = async () => {
   tbody.innerHTML = "";
   select.innerHTML = "";
   cityOptions.innerHTML= "";
+  nameOptions.innerHTML= "";
   const response = await fetch("https://jsonplaceholder.typicode.com/users");
   const data = await response.json();
   fillTable(data);
