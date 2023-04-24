@@ -3,6 +3,7 @@
 <ul>
 <li>ALessandro Muratore</li>
 <li>Paulo</li>
+<li>Rogério Marques</li>
 </ul>
 
 ## Para executar o projeto
