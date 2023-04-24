@@ -6,9 +6,9 @@ const nameOptions = document.querySelector('#name')
 
 const getAllUsers = async () => {
   tbody.innerHTML = "";
+  nameOptions.innerHTML= "";
   select.innerHTML = "";
   cityOptions.innerHTML= "";
-  nameOptions.innerHTML= "";
   const response = await fetch("https://jsonplaceholder.typicode.com/users");
   const data = await response.json();
   fillTable(data);
@@ -39,9 +39,7 @@ const createOptionByName = (users) =>{
 }
 
 const filterById = async (id) => {
-  const response = await fetch(
-    `https://jsonplaceholder.typicode.com/users/?id=${id}`
-  );
+  const response = await fetch(`https://jsonplaceholder.typicode.com/users/?id=${id}`);
   const data = await response.json();
   fillTable(data);
 };
