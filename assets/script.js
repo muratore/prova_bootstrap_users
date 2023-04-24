@@ -1,17 +1,17 @@
 const tbody = document.querySelector("tbody");
 const select = document.querySelector("select");
-const streetOptions = document.querySelector('#street')
+const cityOptions = document.querySelector('#city')
 // Get users
 
 const getAllUsers = async () => {
   tbody.innerHTML = "";
   select.innerHTML = "";
-  streetOptions.innerHTML= "";
+  cityOptions.innerHTML= "";
   const response = await fetch("https://jsonplaceholder.typicode.com/users");
   const data = await response.json();
   fillTable(data);
   createSelection(data);
-  createOptionByStreet(data)
+  createOptionByCity(data)
 };
 getAllUsers();
 
@@ -28,10 +28,10 @@ const createSelection = (users) => {
   });
 };
 
-const createOptionByStreet = (users) =>{
-    streetOptions.insertAdjacentHTML('beforeend', `<option value="null">Filtre pela Rua</option>`)
+const createOptionByCity = (users) =>{
+    cityOptions.insertAdjacentHTML('beforeend', `<option value="null">Filtre pela Cidade</option>`)
     users.map((user)=>{
-        streetOptions.insertAdjacentHTML('beforeend', `<option value="${user.address.street}">${user.address.street}</option>`)
+        cityOptions.insertAdjacentHTML('beforeend', `<option value="${user.address.city}">${user.address.city}</option>`)
     })
 
 }
@@ -43,8 +43,8 @@ const filterById = async (id) => {
   fillTable(data);
 };
 
-const filterByStreet = async (street)=>{
-    const response = await fetch(`https://jsonplaceholder.typicode.com/users/?address.street=${street}`)
+const filterByCity = async (city)=>{
+    const response = await fetch(`https://jsonplaceholder.typicode.com/users/?address.city=${city}`)
     const data = await response.json();
     fillTable(data);
 }
@@ -66,15 +66,14 @@ const fillTable = (users) => {
 
 const handleFilter = () => {
   tbody.innerHTML = "";
+  cityOptions.value=null
   const id = document.querySelector("select").value;
-    console.log(id);
   filterById(id);
 };
 
-const filterStreet=()=>{
+const filterCity=()=>{
     tbody.innerHTML = "";
-    const street = document.getElementById('street').value
-    
-    filterByStreet(street)
-
+    select.value= null;
+    const city = document.getElementById('city').value
+    filterByCity(city)
 }

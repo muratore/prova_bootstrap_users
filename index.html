@@ -4,8 +4,8 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="./assets/styles.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.2.3/css/bootstrap.min.css" integrity="sha512-SbiR/eusphKoMVVXysTKG/7VseWii+Y3FdHrt0EpKgpToZeemhqHeZeLWLhJutz/2ut2Vw1uQEj2MbRF+TVBUA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" href="./assets/styles.css">
     <title>Prova Bootstrap Users</title>
 </head>
 <body>
@@ -17,10 +17,10 @@
         <option value="null">Filtre pelo id</option>
         <option value="id">Id</option>
        </select>
-       <select name="street" id="street" onchange="filterStreet()">
+       <select name="city" id="city" onchange="filterCity()">
+        <option value="null">Filtre pela cidade</option>
        </select>
     </div>
-    
     <table class="table">
         <thead>
           <tr>
@@ -34,7 +34,6 @@
           </tr>
         </thead>
         <tbody>
-     
         </tbody>
       </table>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.2.3/js/bootstrap.min.js" integrity="sha512-1/RvZTcCDEUjY/CypiMz+iqqtaoQfAITmNSJY17Myp4Ms5mdxPS5UV7iOfdZoxcGhzFbOm6sntTKJppjvuhg4g==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
